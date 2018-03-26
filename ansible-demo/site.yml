@@ -1,0 +1,15 @@
+---
+# This playbook deploys a simple standalone Tomcat 7 server.
+
+- hosts: tomcat-server
+  remote_user: ec2-user
+  become: yes
+  become_method: sudo
+
+  roles:
+    - epel
+    - tomcat
+
+  vars_files:
+    - "group_vars/18.219.162.44"
+
